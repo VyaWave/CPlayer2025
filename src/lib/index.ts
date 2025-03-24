@@ -361,7 +361,7 @@ export default class cplayer extends EventEmitter {
   }
 }
 
-if (!process.env.cplayer_noview && !process.env.SSR) {
+if (!process.env.cplayer_noview && !process.env.SSR && typeof window !== 'undefined') {
   function parseCPlayerTag() {
     Array.prototype.forEach.call(document.querySelectorAll('template[cplayer]'),(element: Element) => {
       element.attributes.getNamedItem('loaded') ||
@@ -375,5 +375,7 @@ if (!process.env.cplayer_noview && !process.env.SSR) {
   }
 
   window.addEventListener("load", parseCPlayerTag);
+
+  // 只在浏览器环境中暴露全局变量
   (window as any).cplayer = cplayer;
 }
