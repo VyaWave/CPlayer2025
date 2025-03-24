@@ -1,7 +1,7 @@
 {
-  "name": "cplayer",
+  "name": "cplayer-vite-ssg",
   "version": "3.2.2",
-  "description": "A beautiful and clean WEB Music Player by HTML5.",
+  "description": "A beautiful and clean WEB Music Player by HTML5 For Vite-ssg.",
   "main": "./dist/cplayer.js",
   "scripts": {
     "clean": "rimraf ./dist && rimraf ./lib && rimraf ./example",
