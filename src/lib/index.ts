@@ -229,9 +229,9 @@ export default class cplayer extends EventEmitter {
           this.initializeEventEmitter(this.audioElement);
           this.emit('audioelementchange', this.audioElement);
         }
-      } else { 
+      } else {
         if (!(this.audioElementType === 'HTMLAudioElement')) {
-          if(typeof this.audioElement !== 'undefined') { 
+          if(typeof this.audioElement !== 'undefined') {
             this.removeEventEmitter(this.audioElement);
             this.audioElement.src = '';
           }
@@ -353,7 +353,7 @@ export default class cplayer extends EventEmitter {
     if (this.audioElement) {
       this.audioElement.src = null;
       this.audioElement.removeEventListener("timeupdate", this.eventHandlers.handleTimeUpdate);
-      this.removeAllListeners();  
+      this.removeAllListeners();
     }
     if (this.view) this.view.destroy();
     Object.getOwnPropertyNames(this).forEach((name: keyof cplayer) => delete this[name]);
@@ -361,7 +361,7 @@ export default class cplayer extends EventEmitter {
   }
 }
 
-if (!process.env.cplayer_noview) {
+if (!process.env.cplayer_noview && !process.env.SSR) {
   function parseCPlayerTag() {
     Array.prototype.forEach.call(document.querySelectorAll('template[cplayer]'),(element: Element) => {
       element.attributes.getNamedItem('loaded') ||
@@ -375,6 +375,5 @@ if (!process.env.cplayer_noview) {
   }
 
   window.addEventListener("load", parseCPlayerTag);
+  (window as any).cplayer = cplayer;
 }
-
-(window as any).cplayer = cplayer;
