@@ -185,7 +185,7 @@ export default class cplayerView extends EventEmitter {
     this.rootElement.classList.add('cp-dark');
   }
   public light() {
-    this.rootElement.classList.add('cp-dark');
+    this.rootElement.classList.remove('cp-dark');
   }
 
   public setTheme(theme: 'light' | 'dark') {
