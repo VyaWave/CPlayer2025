@@ -260,6 +260,12 @@ export default class cplayer extends EventEmitter {
     }
   }
 
+  public setTheme(theme: 'light' | 'dark' = 'light') {
+    if (this.view) {
+      this.view.setTheme(theme);
+    }
+  }
+
   public setMode(playmode: string) {
     if (typeof playmode === 'string') {
       if (this.playmodeName !== playmode) {
