@@ -541,3 +541,36 @@ export default class cplayerView extends EventEmitter {
     this.rootElement.parentElement.removeChild(this.rootElement);
   }
 }
+
+function applyLyricAnimation() {
+
+  window.removeEventListener('click', applyLyricAnimation);
+  window.removeEventListener('resize', applyLyricAnimation);
+  const lyricElement = document.querySelector('.cp-lyric-text') as HTMLElement;
+  const titleElement = document.querySelector('.cp-lyric-text-title') as HTMLElement;
+  const subElement = document.querySelector('.cp-lyric-text-sub') as HTMLElement;
+  if (lyricElement && titleElement && subElement) {
+    const lyricWidth = lyricElement.scrollWidth;
+    const titleWidth = titleElement.scrollWidth;
+    const subWidth = subElement.scrollWidth;
+
+    if (titleWidth - lyricWidth >= 0) {
+      titleElement.style.animation = 'marquee 20s linear infinite';
+    } else {
+      titleElement.style.animation = '';
+    }
+    console.log('=== DEBUG: Log: titleElement.style. ===',subWidth, lyricWidth, titleWidth )
+
+    if (subWidth - lyricWidth >= 0) {
+      subElement.style.animation = 'marquee 20s linear infinite';
+    } else {
+      subElement.style.animation = '';
+    }
+  }
+}
+
+// Call this function when the lyrics are updated or when the window is resized
+window.addEventListener('resize', applyLyricAnimation);
+applyLyricAnimation();
+
+window.addEventListener('click', applyLyricAnimation)

@@ -1237,3 +1237,23 @@ body {
 .neko-p-v-5 {
   padding-top: 40px;
   padding-bottom: 40px; }
+.cp-lyric-text {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.cp-lyric-text-title, .cp-lyric-text-sub {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.cp-lyric-text-sub {
+  width: auto;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
