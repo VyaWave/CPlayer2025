@@ -481,11 +481,13 @@ export default class cplayerView extends EventEmitter {
   private handleClickPrevButton = () => {
     this.player.prev();
     this.player.play();
+    applyLyricAnimation();
   }
 
   private handleClickNextButton = () => {
     this.player.next();
     this.player.play();
+    applyLyricAnimation();
   }
 
   private handlePlayStateChange = (paused: boolean) => {

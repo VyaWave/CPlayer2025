@@ -62,6 +62,7 @@ c-player {
     font-size: $base-font-size;
     width: 300px;
     text-align: left;
+
 	.#{$name-prefix}mainbody {
         display: flex;
         align-items: center;
@@ -704,4 +705,5 @@ c-player.#{$name-prefix}dark {
             }
         }
     }
+
 }
