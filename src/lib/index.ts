@@ -1,4 +1,5 @@
 require('./polyfill')
+require('./neko.css');
 import { listloopPlaymode } from './playmode/listloop';
 import { IAudioItem, Iplaymode, IplaymodeConstructor, Iplaylist } from './interfaces';
 import { EventEmitter } from 'events';
