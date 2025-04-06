@@ -1,6 +1,6 @@
 {
   "name": "cplayer-vite-ssg",
-  "version": "3.2.3-alpha.7",
+  "version": "3.2.3-alpha.8",
   "description": "A beautiful and clean WEB Music Player by HTML5.",
   "main": "./dist/cplayer.js",
   "scripts": {
