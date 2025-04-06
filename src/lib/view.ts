@@ -37,7 +37,7 @@ function kanaFilter(str: string) {
 function buildLyric(lyric: string, sublyric?: string, zoomOutKana: boolean = false) {
   // 修改布局，使歌曲名称和歌手名称以两行方式排列
   if (sublyric) {
-    return `<div class="cp-lyric-text-title">${zoomOutKana ? kanaFilter(lyric) : lyric}</div><div class="cp-lyric-text-sub">${sublyric}</div>`;
+    return `<div class="cp-lyric-text-title">${zoomOutKana ? kanaFilter(lyric) : lyric}</div><div class="cp-lyric-text-sub ">${sublyric}</div>`;
   } else {
     return zoomOutKana ? kanaFilter(lyric) : lyric;
   }

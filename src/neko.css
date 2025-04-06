@@ -1241,17 +1241,18 @@ body {
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .cp-lyric-text-title, .cp-lyric-text-sub {
-  display: inline-block;
+  display: inline-block !important;
   white-space: nowrap;
   overflow: hidden;
 }
 
-.cp-lyric-text-sub {
-  width: auto;
-}
 
 @keyframes marquee {
   0% { transform: translateX(0); }
